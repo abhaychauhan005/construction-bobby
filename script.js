@@ -7,18 +7,20 @@
   const lbClose = document.querySelector('.lightbox-close');
 
   function openLightbox(project){
-    const srcWebp = `/assets/projects/${project}-1200.webp`;
-    const srcJpg = `/assets/projects/${project}-1200.jpg`;
+    if(!lbImg) return;
+    const srcWebp = `assets/projects/${project}-1200.webp`;
+    const srcJpg = `assets/projects/${project}-1200.jpg`;
     lbImg.src = srcWebp;
     lbImg.onerror = ()=>{ lbImg.src = srcJpg };
     lbCaption.textContent = project.replace(/-/g,' ');
     lightbox.setAttribute('aria-hidden','false');
-    lbClose.focus();
+    if(lbClose) lbClose.focus();
   }
 
   function closeLightbox(){
+    if(!lightbox) return;
     lightbox.setAttribute('aria-hidden','true');
-    lbImg.src = '';
+    if(lbImg) lbImg.src = '';
   }
 
   links.forEach(a=>{
@@ -29,25 +31,32 @@
     });
   });
 
-  lbClose.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', e=>{ if(e.target===lightbox) closeLightbox(); });
+  if(lbClose) lbClose.addEventListener('click', closeLightbox);
+  if(lightbox) lightbox.addEventListener('click', e=>{ if(e.target===lightbox) closeLightbox(); });
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLightbox(); });
 
-  // Simple form feedback for Formspree
+  // Simple form feedback for Formspree with placeholder guard
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
   if(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      status.textContent = 'Sending…';
+
+      // Guard: prevent sending to Formspree placeholder ID
+      if(form.action && form.action.includes('YOUR_FORM_ID')){
+        if(status) status.textContent = 'Form is not configured: replace YOUR_FORM_ID in contact.html with your Formspree form ID before submitting.';
+        return;
+      }
+
+      if(status) status.textContent = 'Sending…';
       const data = new FormData(form);
       fetch(form.action, {method:'POST',body:data,headers:{'Accept':'application/json'}})
         .then(res=>res.json())
         .then(json=>{
-          status.textContent = 'Thanks — we received your message.';
+          if(status) status.textContent = 'Thanks — we received your message.';
           form.reset();
         }).catch(err=>{
-          status.textContent = 'There was an error sending the form. Replace YOUR_FORM_ID with your Formspree form ID.';
+          if(status) status.textContent = 'There was an error sending the form. Please check your Formspree configuration.';
         });
     });
   }
