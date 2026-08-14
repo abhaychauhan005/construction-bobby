@@ -51,4 +51,41 @@
         });
     });
   }
+
+  // GSAP scroll-scrubbed hero (register if available)
+  function initHeroScrub(){
+    if(!(window.gsap && window.ScrollTrigger)) return;
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const hero = document.querySelector('#hero-scrub');
+    if(!hero) return;
+    const layers = hero.querySelectorAll('.hero-layer');
+    const caption = hero.querySelector('.hero-caption');
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: hero,
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        pin: true
+      }
+    });
+
+    // Parallax-like movement: foreground moves fastest
+    if(layers[0]) tl.fromTo(layers[0], {y:0, scale:1.06}, {y:-260, scale:1, ease:'none'}, 0);
+    if(layers[1]) tl.fromTo(layers[1], {y:0, scale:1.03}, {y:-160, scale:1, ease:'none'}, 0);
+    if(layers[2]) tl.fromTo(layers[2], {y:0, scale:1.01}, {y:-80, scale:1, ease:'none'}, 0);
+
+    if(caption) tl.fromTo(caption, {y:0, opacity:1}, {y:-140, opacity:0, ease:'none'}, 0);
+  }
+
+  // Wait for GSAP scripts if they are deferred
+  if(window.gsap && window.ScrollTrigger){
+    initHeroScrub();
+  } else {
+    window.addEventListener('load', initHeroScrub);
+  }
+
 })();
