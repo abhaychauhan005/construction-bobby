@@ -1,187 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Chauhan &amp; Co.</title>
-<meta name="description" content="Start a project with Chauhan & Co. — get in touch about residential, commercial, renovation or design-build work in Jaipur.">
-<meta name="theme-color" content="#12161A">
-<meta name="robots" content="index, follow">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Contact — Chauhan & Co.">
-<meta property="og:description" content="Get in touch about your next residential, commercial, renovation or design-build project.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' fill='%2312161A'/%3E%3Crect x='17' y='13' width='24' height='8' fill='%2314181C'/%3E%3Crect x='17' y='13' width='8' height='28' fill='%2314181C'/%3E%3Crect x='17' y='33' width='24' height='8' fill='%2314181C'/%3E%3Crect x='14' y='10' width='24' height='8' fill='%239AA0A6'/%3E%3Crect x='14' y='10' width='8' height='28' fill='%235C8CA3'/%3E%3Crect x='14' y='30' width='24' height='8' fill='%23F2A93B'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Construction Bobby</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Contact</h1>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<a class="skip-link" href="#main">Skip to content</a>
+  <main class="container">
+    <section aria-labelledby="contact-title">
+      <h2 id="contact-title">Get in touch</h2>
+      <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" aria-live="polite">
+        <label for="name">Name</label>
+        <input id="name" name="name" required>
 
-<header class="nav" id="siteNav">
-  <a href="index.html" class="logo" aria-label="Chauhan &amp; Co. — home">
-    <svg class="logo-mark" viewBox="0 0 44 44" aria-hidden="true">
-      <rect x="15" y="11" width="24" height="8" fill="#14181C"/>
-      <rect x="15" y="11" width="8" height="28" fill="#14181C"/>
-      <rect x="15" y="31" width="24" height="8" fill="#14181C"/>
-      <rect x="12" y="8" width="24" height="8" fill="#9AA0A6"/>
-      <rect x="12" y="8" width="8" height="28" fill="#5C8CA3"/>
-      <rect x="12" y="28" width="24" height="8" fill="#F2A93B"/>
-    </svg>
-    CHAUHAN<span>&nbsp;&amp; CO.</span>
-  </a>
-  <nav class="links" aria-label="Primary">
-    <a href="index.html#services">Services</a>
-    <a href="projects.html">Work</a>
-    <a href="about.html">About</a>
-    <a href="contact.html" class="current">Contact</a>
-  </nav>
-  <div class="nav-right">
-    <a href="contact.html" class="nav-cta">Start a project</a>
-    <button class="nav-burger" id="navBurger" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html#services">Services</a>
-  <a href="projects.html">Work</a>
-  <a href="about.html">About</a>
-  <a href="contact.html" class="current">Contact</a>
-  <a href="contact.html" class="btn-primary">Start a project</a>
-</div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-<main id="main">
-
-<section class="page-banner">
-  <div class="grid-bg" aria-hidden="true"></div>
-  <div class="wrap">
-    <div class="eyebrow">Get in touch</div>
-    <h1>Tell us what<br>you're building.</h1>
-    <p>Send the basics and a site lead will call back within one business day with next steps — usually a site walk before we quote anything.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap contact-grid">
-
-    <div>
-      <form class="contact-form" id="contactForm" novalidate>
-        <div class="field-group" style="display:contents;">
-          <div class="form-row">
-            <div class="field">
-              <label for="fName">Full name</label>
-              <input type="text" id="fName" name="name" required autocomplete="name">
-            </div>
-            <div class="field">
-              <label for="fPhone">Phone</label>
-              <input type="tel" id="fPhone" name="phone" required autocomplete="tel">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="field">
-              <label for="fEmail">Email</label>
-              <input type="email" id="fEmail" name="email" required autocomplete="email">
-            </div>
-            <div class="field">
-              <label for="fType">Project type</label>
-              <select id="fType" name="project_type" required>
-                <option value="">Select one</option>
-                <option>Residential</option>
-                <option>Commercial</option>
-                <option>Renovation</option>
-                <option>Design-Build</option>
-                <option>Not sure yet</option>
-              </select>
-            </div>
-          </div>
-          <div class="field">
-            <label for="fMessage">Tell us about the project</label>
-            <textarea id="fMessage" name="message" required placeholder="Location, rough size, timeline — whatever you've got."></textarea>
-          </div>
-          <div>
-            <button type="submit" class="btn-primary">Send message <span aria-hidden="true">→</span></button>
-            <p class="form-note" style="margin-top:14px;">Demo form — nothing is actually sent. Wire this up to your CRM or inbox before going live.</p>
-          </div>
-        </div>
+        <button type="submit">Send</button>
+        <div id="form-status" role="status" aria-live="polite"></div>
       </form>
 
-      <div class="form-success" id="formSuccess" role="status">
-        <strong style="font-family:'Anton',sans-serif; text-transform:uppercase; font-size:1.3rem; display:block; margin-bottom:10px;">Thanks, <span id="successName">there</span> — got it.</strong>
-        A site lead will call within one business day. In the meantime, feel free to browse <a href="projects.html" style="color:var(--amber); text-decoration:underline;">recent work</a>.
-      </div>
-    </div>
+      <p class="note">Form is wired to Formspree with a placeholder ID. Replace YOUR_FORM_ID with your Formspree form ID.</p>
+    </section>
+  </main>
 
-    <div>
-      <div class="info-card">
-        <div class="info-row">
-          <h4>Site office</h4>
-          <p>Chauhan &amp; Co. Construction<br>Vaishali Nagar, Jaipur, Rajasthan 302021</p>
-        </div>
-        <div class="info-row">
-          <h4>Phone</h4>
-          <a href="tel:+91XXXXXXXXXX">+91 XXX XXX XXXX</a>
-        </div>
-        <div class="info-row">
-          <h4>Email</h4>
-          <a href="mailto:site@chauhanandco.build">site@chauhanandco.build</a>
-        </div>
-        <div class="info-row">
-          <h4>Hours</h4>
-          <p>Monday–Saturday, 9am–6pm IST</p>
-        </div>
-        <div class="map-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#F2A93B" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>
-          <span>Map placeholder — Jaipur, Rajasthan</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-top">
-      <a href="index.html" class="logo">
-        <svg class="logo-mark" viewBox="0 0 44 44" aria-hidden="true">
-          <rect x="15" y="11" width="24" height="8" fill="#14181C"/>
-          <rect x="15" y="11" width="8" height="28" fill="#14181C"/>
-          <rect x="15" y="31" width="24" height="8" fill="#14181C"/>
-          <rect x="12" y="8" width="24" height="8" fill="#9AA0A6"/>
-          <rect x="12" y="8" width="8" height="28" fill="#5C8CA3"/>
-          <rect x="12" y="28" width="24" height="8" fill="#F2A93B"/>
-        </svg>
-        CHAUHAN<span>&nbsp;&amp; CO.</span>
-      </a>
-      <div class="footer-cols">
-        <div class="footer-col">
-          <h4>Company</h4>
-          <a href="index.html#services">Services</a>
-          <a href="projects.html">Work</a>
-          <a href="about.html">About</a>
-        </div>
-        <div class="footer-col">
-          <h4>Site office</h4>
-          <p>Jaipur, Rajasthan</p>
-          <p>Mon–Sat, 9am–6pm</p>
-        </div>
-        <div class="footer-col">
-          <h4>Follow</h4>
-          <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
-        </div>
-      </div>
-    </div>
-    <p class="footer-note" style="margin-top:50px;">© 2026 Chauhan &amp; Co. Construction — demo site, placeholder content.</p>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="/script.js" defer></script>
 </body>
 </html>
