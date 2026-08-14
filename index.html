@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Construction Bobby — Home</title>
   <link rel="stylesheet" href="/style.css">
+  <!-- Fonts (display=swap for performance) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <!-- GSAP for scroll-scrubbed hero -->
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js" defer></script>
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
@@ -24,6 +26,7 @@
   <main class="container">
     <!-- Scroll-scrubbed hero (GSAP ScrollTrigger) -->
     <section id="hero-scrub" class="hero-scrub" aria-label="Hero — construction showcase">
+      <div class="hero-overlays" aria-hidden="true"></div>
       <div class="hero-layers">
         <div class="hero-layer" data-layer="3">
           <picture>
@@ -47,14 +50,22 @@
 
       <div class="hero-caption">
         <div class="container">
-          <h2>Precision construction — demo site</h2>
-          <p>Scroll to watch a layered build animation and explore our featured projects.</p>
+          <h2 class="hero-title">Precision construction</h2>
+          <p class="hero-lead">Dramatic, cinematic build stories — delivered with craft and clarity.</p>
           <p><a class="btn" href="/projects.html">View Projects</a></p>
         </div>
       </div>
+
+      <!-- Unsplash sources (placeholders used here). Replace with your own images when ready. -->
+      <!--
+        Background / reference images suggested:
+        - Dramatic exterior (dusk): https://unsplash.com/s/photos/dramatic-exterior-facade-dusk
+        - Aerial logistics / warehouse: https://unsplash.com/s/photos/warehouse-aerial
+        - Warm interior finish / studio: https://unsplash.com/s/photos/warm-interior
+      -->
     </section>
 
-    <section id="features">
+    <section id="features" class="site-features">
       <h3>Highlights</h3>
       <ul>
         <li>Responsive picture srcset for SEO and performance</li>

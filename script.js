@@ -67,18 +67,18 @@
       scrollTrigger: {
         trigger: hero,
         start: 'top top',
-        end: 'bottom top',
-        scrub: true,
+        end: '+=1200',
+        scrub: 1,
         pin: true
       }
     });
 
     // Parallax-like movement: foreground moves fastest
-    if(layers[0]) tl.fromTo(layers[0], {y:0, scale:1.06}, {y:-260, scale:1, ease:'none'}, 0);
-    if(layers[1]) tl.fromTo(layers[1], {y:0, scale:1.03}, {y:-160, scale:1, ease:'none'}, 0);
-    if(layers[2]) tl.fromTo(layers[2], {y:0, scale:1.01}, {y:-80, scale:1, ease:'none'}, 0);
+    if(layers[0]) tl.fromTo(layers[0], {y:0, scale:1.12}, {y:-360, scale:1, ease:'none'}, 0);
+    if(layers[1]) tl.fromTo(layers[1], {y:0, scale:1.06}, {y:-220, scale:1, ease:'none'}, 0);
+    if(layers[2]) tl.fromTo(layers[2], {y:0, scale:1.02}, {y:-100, scale:1, ease:'none'}, 0);
 
-    if(caption) tl.fromTo(caption, {y:0, opacity:1}, {y:-140, opacity:0, ease:'none'}, 0);
+    if(caption) tl.fromTo(caption, {y:0, opacity:1}, {y:-200, opacity:0, ease:'none'}, 0);
   }
 
   // Wait for GSAP scripts if they are deferred
