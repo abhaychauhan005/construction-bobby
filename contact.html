@@ -1,37 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Contact — Chauhan &amp; Co.</title>
-<meta name="description" content="Start a project with Chauhan & Co. — get in touch about residential, commercial, renovation or design-build work in Jaipur.">
-<meta name="theme-color" content="#12161A">
-<meta name="robots" content="index, follow">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Contact — Chauhan & Co.">
-<meta property="og:description" content="Get in touch about your next residential, commercial, renovation or design-build project.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' fill='%2312161A'/%3E%3Crect x='17' y='13' width='24' height='8' fill='%2314181C'/%3E%3Crect x='17' y='13' width='8' height='28' fill='%2314181C'/%3E%3Crect x='17' y='33' width='24' height='8' fill='%2314181C'/%3E%3Crect x='14' y='10' width='24' height='8' fill='%239AA0A6'/%3E%3Crect x='14' y='10' width='8' height='28' fill='%235C8CA3'/%3E%3Crect x='14' y='30' width='24' height='8' fill='%23F2A93B'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="nav" id="siteNav">
-  <a href="index.html" class="logo" aria-label="Chauhan &amp; Co. — home">
-    <svg class="logo-mark" viewBox="0 0 44 44" aria-hidden="true">
-      <rect x="15" y="11" width="24" height="8" fill="#14181C"/>
-      <rect x="15" y="11" width="8" height="28" fill="#14181C"/>
-      <rect x="15" y="31" width="24" height="8" fill="#14181C"/>
-      <rect x="12" y="8" width="24" height="8" fill="#9AA0A6"/>
-      <rect x="12" y="8" width="8" height="28" fill="#5C8CA3"/>
-      <rect x="12" y="28" width="24" height="8" fill="#F2A93B"/>
-    </svg>
-    CHAUHAN<span>&nbsp;&amp; CO.</span>
-  </a>
+  <a href="index.html" class="logo" aria-label="Chauhan &amp; Co. — home">CHAUHAN<span>&nbsp;&amp; CO.</span></a>
   <nav class="links" aria-label="Primary">
     <a href="index.html#services">Services</a>
     <a href="projects.html">Work</a>
@@ -55,7 +34,6 @@
 </div>
 
 <main id="main">
-
 <section class="page-banner">
   <div class="grid-bg" aria-hidden="true"></div>
   <div class="wrap">
@@ -69,7 +47,8 @@
   <div class="wrap contact-grid">
 
     <div>
-      <form class="contact-form" id="contactForm" novalidate>
+      <!-- IMPORTANT: replace YOUR_FORM_ID below with your Formspree ID or change the action to your endpoint -->
+      <form class="contact-form" id="contactForm" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" novalidate>
         <div class="field-group" style="display:contents;">
           <div class="form-row">
             <div class="field">
@@ -104,10 +83,13 @@
           </div>
           <div>
             <button type="submit" class="btn-primary">Send message <span aria-hidden="true">→</span></button>
-            <p class="form-note" style="margin-top:14px;">Demo form — nothing is actually sent. Wire this up to your CRM or inbox before going live.</p>
+            <p class="form-note" style="margin-top:14px;">Demo form — nothing is actually sent until you replace the form action with a real endpoint.</p>
           </div>
         </div>
       </form>
+
+      <!-- Accessible live region for form messages -->
+      <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
 
       <div class="form-success" id="formSuccess" role="status">
         <strong style="font-family:'Anton',sans-serif; text-transform:uppercase; font-size:1.3rem; display:block; margin-bottom:10px;">Thanks, <span id="successName">there</span> — got it.</strong>
@@ -148,17 +130,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-top">
-      <a href="index.html" class="logo">
-        <svg class="logo-mark" viewBox="0 0 44 44" aria-hidden="true">
-          <rect x="15" y="11" width="24" height="8" fill="#14181C"/>
-          <rect x="15" y="11" width="8" height="28" fill="#14181C"/>
-          <rect x="15" y="31" width="24" height="8" fill="#14181C"/>
-          <rect x="12" y="8" width="24" height="8" fill="#9AA0A6"/>
-          <rect x="12" y="8" width="8" height="28" fill="#5C8CA3"/>
-          <rect x="12" y="28" width="24" height="8" fill="#F2A93B"/>
-        </svg>
-        CHAUHAN<span>&nbsp;&amp; CO.</span>
-      </a>
+      <a href="index.html" class="logo">CHAUHAN<span>&nbsp;&amp; CO.</span></a>
       <div class="footer-cols">
         <div class="footer-col">
           <h4>Company</h4>
@@ -166,22 +138,12 @@
           <a href="projects.html">Work</a>
           <a href="about.html">About</a>
         </div>
-        <div class="footer-col">
-          <h4>Site office</h4>
-          <p>Jaipur, Rajasthan</p>
-          <p>Mon–Sat, 9am–6pm</p>
-        </div>
-        <div class="footer-col">
-          <h4>Follow</h4>
-          <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
-        </div>
       </div>
     </div>
     <p class="footer-note" style="margin-top:50px;">© 2026 Chauhan &amp; Co. Construction — demo site, placeholder content.</p>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
